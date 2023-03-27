@@ -1,3 +1,4 @@
+import {User} from "../models/index"
 exports.removeAdmin = async (req, res) => {
   try {
     const { id } = req.params;

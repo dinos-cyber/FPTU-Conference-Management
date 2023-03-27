@@ -1,3 +1,4 @@
+import { Paper } from "../models/index";
 exports.getPaper = async (req, res) => {
   try {
     const { id } = req.params;

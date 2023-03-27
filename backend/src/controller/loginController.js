@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
     if (!isMatch) {
       return res.status(400).json({ message: "Invalid email or password" });
     }
-    if (!user.is_activate)
+    if (!user.is_active)
       return res
         .status(400)
         .json({ message: "Please verify your email first!" });

@@ -1,3 +1,4 @@
+import { User } from "../models/index";
 exports.getUserProfile = async (req, res) => {
   try {
     const user = await User.findOne({ where: { id: req.user.id } });

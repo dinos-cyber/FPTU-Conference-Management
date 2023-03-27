@@ -1,4 +1,6 @@
-exports.deletePaper = async (req, res) => {
+import { Paper } from "../models/index";
+
+module.exports = async (req, res) => {
   try {
     const { id } = req.params;
     const paper = await Paper.findOne({ where: { id, user_id: req.user.id } });

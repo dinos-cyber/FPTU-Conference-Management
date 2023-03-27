@@ -1,3 +1,5 @@
+import { User } from "../models/index";
+
 exports.updateUser = async (req, res) => {
   try {
     const { id } = req.params;

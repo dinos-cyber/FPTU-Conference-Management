@@ -1,3 +1,5 @@
+import { User } from "../models/index";
+
 exports.getAddUser = async (req, res) => {
   try {
     const users = await User.findAll();

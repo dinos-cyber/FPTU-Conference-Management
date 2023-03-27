@@ -1,4 +1,5 @@
-exports.updatePaper = async (req, res) => {
+import { Paper } from "../models/index";
+module.export = async (req, res) => {
   try {
     const { id } = req.params;
     const { version, status } = req.body;

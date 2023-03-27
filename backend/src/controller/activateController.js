@@ -1,7 +1,11 @@
 import jwt from "jsonwebtoken";
+import db from "../models/index";
+
 const activateUser = async (req, res) => {
   try {
     const { token } = req.params;
+    console.log(token);
+
     const decoded = jwt.verify(token, process.env.SECRET_KEY);
     const user = await db.User.findOne({ where: { id: decoded.id } });
     if (!user) {

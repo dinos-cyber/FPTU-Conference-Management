@@ -1,7 +1,8 @@
-exports.deleteUser = async (req, res) => {
+import db from "../models/index";
+module.exports = async (req, res) => {
   try {
-    await User.destroy({ where: { id: req.user.id } });
-    await Paper.destroy({ where: { user_id: req.user.id } });
+    await db.User.destroy({ where: { id: req.params.user_id } });
+    await db.Paper.destroy({ where: { user_id: req.params.user_id } });
     return res.status(200).json({ message: "Account deleted successfully" });
   } catch (error) {
     console.log(error);

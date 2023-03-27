@@ -1,3 +1,4 @@
+import { User } from "../models/index";
 exports.updateUserProfile = async (req, res) => {
   try {
     const { first_name, last_name, email, password, country, address, phone } =
