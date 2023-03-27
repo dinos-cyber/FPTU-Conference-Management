@@ -1,5 +1,5 @@
 import db from "../models/index";
-module.exports = async (req, res) => {
+exports.deleteUserAccount = async (req, res) => {
   try {
     await db.User.destroy({ where: { id: req.params.user_id } });
     await db.Paper.destroy({ where: { user_id: req.params.user_id } });

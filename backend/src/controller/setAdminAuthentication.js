@@ -1,5 +1,5 @@
 import { User } from "../models/index";
-exports.updateUserProfile = async (req, res) => {
+exports.setAdminController = async (req, res) => {
   try {
     const { id } = req.params;
     const user = await User.findOne({ where: { id } });

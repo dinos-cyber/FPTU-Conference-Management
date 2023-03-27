@@ -1,6 +1,6 @@
 import db from "../models/index";
 import bcrypt from "bcrypt";
-module.exports = async (req, res) => {
+exports.createUser = async (req, res) => {
   try {
     const { first_name, last_name, email, password, is_admin, is_organizer } =
       req.body;
