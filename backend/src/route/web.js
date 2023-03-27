@@ -29,16 +29,15 @@ const initWebRoute = (app) => {
   app.post("/paper", authenticate, createPaperController);
   app.post("/upload/:path", authenticate, uploadFileController);
   app.get("/download/:path", authenticate, downloadFileController);
-  app.get("/papers/:id", authenticate, getPaper);
-  app.post("/updatepapers/:id", authenticate, updatePaper);
   app.get("/allpaper", authenticate, getAllUserPaperController);
-  // test below
-  app.delete("/papers/:id", authenticate, deletePaper);
   app.get("/profile", authenticate, getUserProfile);
   app.post("/profile", authenticate, updateUserProfile);
-  app.delete("/account", authenticate, deleteUserAccount);
+  app.get("/paper/:id", adminAuthenticate, getPaper);
+  app.post("/updatepaper/:id", adminAuthenticate, updatePaper);
+  app.delete("/account", adminAuthenticate, deleteUserAccount);
+  app.delete("/paper/:id", adminAuthenticate, deletePaper);
   app.get("/users", adminAuthenticate, getAllUsers);
-  app.post("/users", adminAuthenticate, createUser);
+  app.post("/newuser", adminAuthenticate, createUser);
   app.put("/users/:id", adminAuthenticate, updateUserProfile);
   app.delete("/users/:id", adminAuthenticate, deleteUserAccount);
   app.get("/papers", adminAuthenticate, getAllPaperController);
